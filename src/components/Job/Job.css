@@ -1,0 +1,19 @@
+.job{
+    height: fit-content;
+    padding: 20px 10px;
+    margin: 10px 0px;
+}
+
+.btn{
+    background-color: rgb(47, 86, 239);
+    padding: 10px 20px;
+    font-weight: 600;
+}
+.job-head{
+    width: 100%;
+    /* background-color: #fff; */
+    justify-content: space-between;
+}
+.desc{
+    font-style: italic;
+}

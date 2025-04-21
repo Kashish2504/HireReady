@@ -1,0 +1,23 @@
+body {
+  background-image: url("https://www.fcinq.com/v3/wp-content/uploads/cover-fcinq.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-member{
+  position: relative;
+  /* background-color: #fff; */
+}
+.member-img{
+  position: absolute;
+  opacity: 0;
+  top: -260px;
+  left: -100px;
+  /* mix-blend-mode: difference; */
+  scale: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+}

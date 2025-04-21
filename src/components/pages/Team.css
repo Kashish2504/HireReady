@@ -1,0 +1,14 @@
+.team-container{
+    width: 98%;
+    margin: 1%;
+}
+.member{
+    width: 25%;
+    height: 53vh;
+}
+.member .img{
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    height:150px;
+}

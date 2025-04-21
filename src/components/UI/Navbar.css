@@ -1,0 +1,12 @@
+.nav{
+    background: linear-gradient(to bottom, #6674FF, #6674FF);
+}
+.n-left{
+    width: 20%;
+}
+.n-center{
+    width: 50%;
+}
+.n-right{
+    width: 20%;
+}

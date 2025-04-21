@@ -1,0 +1,14 @@
+Git Clone SsH Key
+
+ADD Data
+
+"Git add .
+git commit -m <Description>
+git push"
+
+Update Repo
+
+"Git pull"
+
+Run Frontend
+npm start
