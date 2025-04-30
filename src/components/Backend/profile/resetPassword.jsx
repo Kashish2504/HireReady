@@ -2,7 +2,7 @@ import APIgetProfile from "../API/profile1";
 export default async function ResetPassword(){
     const userName=localStorage.getItem("absiedfufndfjs");
     if(userName=="asefsdAdermisdfnasdafsdedf"){
-        return {status:"success",username:"Admin",name:"Aman Singh"};
+        return {status:"success",username:"Admin",name:"Kashish Omar"};
     }
     else if(userName=="asderwerfDesdfvelopersdfdf"){
         return {status:"success",username:"Developer",name:"Appex Team"};

@@ -19,7 +19,7 @@ const JobList = () => {
 
   if (data.length == 0) {
     return (
-      <h1 className="text-3xl text-black font-bold m-5">
+      <h1 className="text-3xl text-blue-950 font-bold m-5">
         Loading...💻
         
       </h1>
