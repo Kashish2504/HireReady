@@ -23,8 +23,13 @@ const JobList = () => {
     fetchJobs()
   }, [])
 
-  if (jobs.length == 0) {
-    return <h1 className="text-3xl text-black font-bold m-5">Loading...💻</h1>;
+  if (data.length == 0) {
+    return (
+      <h1 className="text-3xl text-black font-bold m-5">
+        Loading...💻
+        
+      </h1>
+    );
   }
 
   return (

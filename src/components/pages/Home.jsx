@@ -17,7 +17,7 @@ const HomePage = () => {
           </h1>
           <Link
             to="/login"
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+            className="bg-blue-950 text-white px-6 py-3 rounded-lg hover:bg-blue-900"
           >
             Get Started
           </Link>
