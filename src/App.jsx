@@ -6,7 +6,7 @@ import Dashboard from './components/pages/Dashboard';
 import About from './components/About/about';
 import MCQ from './components/test/MCQ/mcq';
 import Profile from './components/Profile/profile';
-import Coding from './components/test/coding/codeing';
+import Coding from './components/test/coding/coding';
 import VirtualInterview from './components/interview/virtual_interview/virtual_interview';
 import Chat from './components/interview/chat/chat';
 import ProtectedRoute from "./ProtectedRoute";
@@ -19,8 +19,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/dashboard" element={
-          <ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/dashboard/about" element={<About />} />
         <Route path="/dashboard/mcq" element={<ProtectedRoute><MCQ /></ProtectedRoute>} />
         <Route path="/dashboard/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
