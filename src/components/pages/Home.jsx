@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import Navbar from "../UI/Navbar";
 import Features from "./Features.jsx";
-import Team from "./Team.jsx";
+// import Team from "./Team.jsx";
 import Footer from "../UI/footer.jsx";
 
 const HomePage = () => {
   return (
     <>
       <Navbar />
-      <div className="flex h-screen w-[98vw] items-center justify-center ">
+      <div className="flex h-screen w-[98vw] items-center justify-center">
         <div className="text-center ">
           <h1 className="text-2xl font-bold mb-6 text-black">
             {" "}
@@ -24,7 +24,7 @@ const HomePage = () => {
         </div>
       </div>
       <Features />
-      <Team></Team>
+      {/* <Team></Team> */}
       <Footer/>
     </>
   );
