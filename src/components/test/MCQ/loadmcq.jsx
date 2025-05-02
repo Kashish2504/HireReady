@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 const mcqList = (props) => {
   const [mcqs, setMcqs] = useState([]);
@@ -22,21 +23,92 @@ const mcqList = (props) => {
     };
     fetchMCQ();
   }, []);
+=======
+import axios from "axios";
+import { useState, useEffect } from "react";
+import McqCard from "./McqCard";
+
+
+const LoadMCQ = () => {
+  const [section, setSection] = useState('');
+  const [mcqs, setMcqs] = useState([]);
+  const [allmcq, setAllmcq] = useState([]);
+
+  const changeSection = (section) => {
+    setSection(section)
+    console.log(section);
+    changeMCQS(section);
+  } 
+
+  const changeMCQS = (section) => {
+    const newData = allmcq.filter((mcq)=>{
+      return mcq.section == section;
+    })
+    setMcqs(newData);
+    console.log(mcqs);
+  }
+
+  useEffect(()=>{
+    const fetchMCQs = async () => {
+      try{
+        const response = await axios.get('http://localhost:8000/api/mcqs');
+        const data = await response.data;
+        console.log(data);
+        // setMcqs(data);
+        setAllmcq(data)
+      } catch (err){
+        console.error('Error in fetching mcqs: ', err);
+      }
+    }
+    fetchMCQs();
+  }, [])
+>>>>>>> 36d005d82b0c96c61e1ac22037def3199d3cbff6
 
   return (
     <>
       <div>
         {
+<<<<<<< HEAD
           mcqs.map((m)=>{
             <p>{m.question}</p>
           })
+=======
+          (section == '') ? (
+             <>
+            <h1>Select Section</h1>
+            <button onClick={()=>{changeSection('coa')}} >COA</button>
+            <button onClick={()=>{changeSection('dbms')}} >DBMS</button>
+            <button onClick={()=>{changeSection('python')}} >Python</button>
+            <button onClick={()=>{changeSection('java')}} >JAVA</button>
+            <button onClick={()=>{changeSection('oops')}} >OOPs</button>
+            <button onClick={()=>{changeSection('web')}} >Web Development</button>
+            <button onClick={()=>{changeSection('mix')}} >Mix</button>
+            </>
+          ) : (
+            <>
+            <h1>Test Start {section}</h1>
+            {
+              mcqs.map((mcq)=>{
+                <McqCard data={mcq} />
+              })
+            }
+            <button onClick={()=>{changeSection('')}}>Go Back</button>
+            </>
+          )
+>>>>>>> 36d005d82b0c96c61e1ac22037def3199d3cbff6
         }
       </div>
     </>
   );
 };
+<<<<<<< HEAD
 
 export default mcqList;
+=======
+export default LoadMCQ;
+
+// Older Version
+>>>>>>> 36d005d82b0c96c61e1ac22037def3199d3cbff6
 
 // import loadMCQ_CAT from "../../Backend/API/mcq";
 // import getMCQ from "../../Backend/API/get mcq";
@@ -90,6 +162,7 @@ export default mcqList;
 //     );
 //   };
 //   return (
+<<<<<<< HEAD
 // <>
 //   {showCateg ? (
 //     <>
@@ -209,5 +282,126 @@ export default mcqList;
 //     </div>
 //   )}
 // </>
+=======
+//     <>
+//       {showCateg ? (
+//         <>
+//           <Center />
+//           <div className=" my-2 p-2 text-black">
+//             <h1 className="text-black font-bold flex justify-center p-1 m-1 text-xl">
+//               Select Cataegory
+//             </h1>
+//             <div className="flex justify-around">
+//               {mcqCateg.map((value, index) => (
+//                 <div
+//                   key={index}
+//                   className="text-black bg-gray-300 m-2 p-4 flex justify-center "
+//                 >
+//                   <button
+//                     onClick={() => handleCategSelect(value)}
+//                     className="text-black hover:-translate-y-1 transition-all ease-in"
+//                   >
+//                     {value.name}
+//                   </button>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </>
+//       ) : (
+//         <div>
+//       <p className="text-black flex justify-center text-xl m-2 p-2">
+//         {categ} MCQ
+//       </p>
+//       {mcqQuestions.map((value, index) => (
+//         <div key={index} className="text-black bg-gray-100 my-1 mx-2 p-1 rounded">
+//           <div className="flex justify-between">
+//             <p className="text-green-400">Question Number: {index + 1}</p>
+//             <p
+//               className={`px-2 ${
+//                 value.difficulty === 1
+//                   ? "text-green-500"
+//                   : value.difficulty === 2
+//                   ? "text-yellow-500"
+//                   : "text-red-500"
+//               }`}
+//             >
+//               Difficulty:{" "}
+//               {value.difficulty === 1 ? "Easy" : value.difficulty === 2 ? "Medium" : "Hard"}
+//             </p>
+//           </div>
+//           <p className="text-black text-m">Question: {value.question_text}</p>
+//           <div className="flex justify-start">
+//             <div className="w-1/2">
+//               {["A", "B"].map((option) => (
+//                 <button
+//                   key={option}
+//                   className={`flex justify-start text-black block rounded m-2 px-2 py-1 text-base border-gray-500 border-[1.5px] w-2/3
+//                     ${
+//                       selectedAnswers[index] === option
+//                         ? option === value.correct_answer
+//                           ? "bg-green-500" // Correct answer: green
+//                           : "bg-red-500" // Wrong answer: red
+//                         : "bg-white hover:border-blue-500" // Default state
+//                     }`}
+//                   disabled={allowedToAnswer.includes(index)}
+//                   onClick={() => handleAnswerClick(index, option)}
+//                 >
+//                   {option}: {value[`option_${option.toLowerCase()}`]}
+//                 </button>
+//               ))}
+//             </div>
+//             <div className="w-1/2">
+//               {["C", "D"].map((option) => (
+//                 <button
+//                   key={option}
+//                   className={`flex justify-start text-black block rounded m-2 px-2 py-1 text-base border-gray-500 border-[1.5px] w-2/3
+//                     ${
+//                       selectedAnswers[index] === option
+//                         ? option === value.correct_answer
+//                           ? "bg-green-500" // Correct answer: green
+//                           : "bg-red-500" // Wrong answer: red
+//                         : "bg-white hover:border-blue-500" // Default state
+//                     }`}
+//                   disabled={allowedToAnswer.includes(index)}
+//                   onClick={() => handleAnswerClick(index, option)}
+//                 >
+//                   {option}: {value[`option_${option.toLowerCase()}`]}
+//                 </button>
+//               ))}
+//             </div>
+//           </div>
+//           {/* Show Correct Option */}
+//           <div className="text-black text-xs mt-2">
+//             <button
+//               className="text-blue-500 flex items-center"
+//               onClick={() => handleShowResult(index)}
+//             >
+//               {showCorrectOption.includes(index) ? (
+//                 <>
+//                   <CiCircleChevUp className="text-black mr-1" /> Hide Correct Answer
+//                 </>
+//               ) : (
+//                 <>
+//                   <CiCircleChevDown className="text-black mr-1" /> Show Correct Answer
+//                 </>
+//               )}
+//             </button>
+//             {showCorrectOption.includes(index) && (
+//               <p className="text-green-600 font-bold">Correct Answer: {value.correct_answer}</p>
+//             )}
+//           </div>
+//         </div>
+//       ))}
+//           <button
+//             className="text-white bg-blue-500 rounded p-2 mx-8 my-2"
+//             onClick={() => (window.location.href = "/dashboard/mcq")}
+//           >
+//             Back
+//           </button>
+//         </div>
+//       )}
+//     </>
+>>>>>>> 36d005d82b0c96c61e1ac22037def3199d3cbff6
 //   );
 // }

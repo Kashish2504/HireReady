@@ -24,7 +24,16 @@ const JobList = () => {
   }, []);
 
   if (jobs.length == 0) {
+<<<<<<< HEAD
     return <h1 className="text-3xl text-black font-bold m-5">Loading...💻</h1>;
+=======
+    return (
+      <h1 className="text-3xl text-black font-bold m-5">
+        Loading...💻
+        
+      </h1>
+    );
+>>>>>>> 36d005d82b0c96c61e1ac22037def3199d3cbff6
   }
 
   return (
